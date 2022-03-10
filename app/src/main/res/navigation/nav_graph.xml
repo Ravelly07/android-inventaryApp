@@ -42,7 +42,7 @@
     <fragment
         android:id="@+id/itemViewFragment"
         android:name="com.example.deliveryone.ItemViewFragment"
-        android:label="fragment_item_view"
+        android:label="@string/fragment_item_view"
         tools:layout="@layout/fragment_item_view" />
     <fragment
         android:id="@+id/adminViewFragment"

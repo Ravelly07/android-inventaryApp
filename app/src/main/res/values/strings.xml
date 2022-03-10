@@ -32,4 +32,6 @@
     <string name="defaultText">Database Information</string>
     <string name="codigo">Código de barras:</string>
     <string name="databaseAdd">Insertar Valor</string>
+    <string name="fragment_item_view">Producto</string>
+    <string name="insert">Insert New Product</string>
 </resources>
