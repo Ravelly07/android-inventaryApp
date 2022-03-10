@@ -2,8 +2,8 @@
     <string name="app_name">DeliveryOne</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
+    <string name="first_fragment_label">Login Page</string>
+    <string name="second_fragment_label">Sign Up Page</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
@@ -16,4 +16,20 @@
     <string name="username">UserName</string>
     <string name="fullname">Full Name</string>
     <string name="email">Email</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="default_search">Busca un producto...</string>
+    <string name="fragment_items_label">Inventary</string>
+    <string name="register">Register Account</string>
+    <string name="costo">Costo Último:</string>
+    <string name="producto">Producto</string>
+    <string name="precio1">Primer Precio:</string>
+    <string name="precio2">Segundo Precio:</string>
+    <string name="descripcion">Nombre del Producto:</string>
+    <string name="iva">IVA:</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="defaultText">Database Information</string>
+    <string name="codigo">Código de barras:</string>
+    <string name="databaseAdd">Insertar Valor</string>
 </resources>

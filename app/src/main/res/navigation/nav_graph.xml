@@ -12,6 +12,9 @@
         tools:layout="@layout/fragment_first">
 
         <action
+            android:id="@+id/action_FirstFragment_to_itemsFragment"
+            app:destination="@id/ItemsFragment" />
+        <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
             app:destination="@id/SecondFragment" />
     </fragment>
@@ -20,9 +23,30 @@
         android:name="com.example.deliveryone.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
-
         <action
             android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/ItemsFragment"
+        android:name="com.example.deliveryone.ItemsFragment"
+        android:label="@string/fragment_items_label"
+        tools:layout="@layout/fragment_items" >
+        <action
+            android:id="@+id/action_ItemsFragment_to_itemViewFragment"
+            app:destination="@id/itemViewFragment" />
+        <action
+            android:id="@+id/action_ItemsFragment_to_adminViewFragment"
+            app:destination="@id/adminViewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemViewFragment"
+        android:name="com.example.deliveryone.ItemViewFragment"
+        android:label="fragment_item_view"
+        tools:layout="@layout/fragment_item_view" />
+    <fragment
+        android:id="@+id/adminViewFragment"
+        android:name="com.example.deliveryone.AdminViewFragment"
+        android:label="fragment_admin_view"
+        tools:layout="@layout/fragment_admin_view" />
 </navigation>
