@@ -15,6 +15,14 @@ public class ItemViewFragment extends Fragment {
         // Required empty public constructor
     }
 
+    //Metodos-------
+    private void SearchItem(){
+
+    }
+
+    //---------------
+
+
     public static ItemViewFragment newInstance(String param1, String param2) {
         ItemViewFragment fragment = new ItemViewFragment();
 

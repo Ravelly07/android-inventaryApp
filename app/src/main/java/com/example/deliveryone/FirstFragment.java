@@ -11,9 +11,17 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.deliveryone.databinding.FragmentFirstBinding;
-
+// -------------Login View -------------
 public class FirstFragment extends Fragment {
     private FragmentFirstBinding binding;
+
+
+    //Metodos-------
+    private void autentication(){
+
+    }
+
+    //---------------
 
     @Override
     public View onCreateView(

@@ -10,16 +10,19 @@ import android.view.ViewGroup;
 
 public class AdminViewFragment extends Fragment {
 
-    public AdminViewFragment() {
-        // Required empty public constructor
+    //Metodos-------
+    private void  SearchItem(){
+
     }
 
+    private void Update(){
 
-    public static AdminViewFragment newInstance(String param1, String param2) {
-        AdminViewFragment fragment = new AdminViewFragment();
-
-        return fragment;
     }
+
+    private void Delete(){
+
+    }
+    //---------------
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -21,6 +21,13 @@ public class ItemsFragment extends Fragment {
             "Lilit","Coqueta","Ron","Draco","Chispita","Bala","Canela"}; //ESTO SOLO PARA TENER UN EJEMPLO DE VISTA
     ArrayAdapter<String> arrayAdapter;
 
+    //Metodos-------
+    private void createListItems(){
+
+
+    }
+    //---------------
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

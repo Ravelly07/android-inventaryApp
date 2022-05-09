@@ -10,11 +10,16 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.deliveryone.databinding.FragmentSecondBinding;
-
+//-----------------Sign Up View
 public class SecondFragment extends Fragment {
 
     private FragmentSecondBinding binding;
+    //Metodos-------
+    private void registerUser(){
 
+    }
+
+    //---------------
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
