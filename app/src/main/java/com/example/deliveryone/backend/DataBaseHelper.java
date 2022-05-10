@@ -28,6 +28,13 @@ public class DataBaseHelper extends SQLiteOpenHelper {
 
         //Insertamos el usuario administrador
         sqLiteDatabase.execSQL(Utilidades.ADMIN_USER);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO1);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO2);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO3);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO4);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO5);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO6);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO7);
 
     }
 

@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
         dbhelper = new DataBaseHelper(this);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
-        if(db != null){
-            Toast.makeText(this, "BASE DE DATOS CREADA CON EXITO",Toast.LENGTH_LONG).show();
-        }else{
-            Toast.makeText(this, "ERROR AL CREAR LA BASE DE DATOS",Toast.LENGTH_LONG).show();
-        }
+//        if(db != null){
+//            Toast.makeText(this, "BASE DE DATOS CREADA CON EXITO",Toast.LENGTH_LONG).show();
+//        }else{
+//            Toast.makeText(this, "ERROR AL CREAR LA BASE DE DATOS",Toast.LENGTH_LONG).show();
+//        }
 
     }
 

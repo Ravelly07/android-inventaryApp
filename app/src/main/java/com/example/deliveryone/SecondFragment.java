@@ -1,8 +1,10 @@
 package com.example.deliveryone;
 
 import android.content.ContentValues;
+import android.content.SearchRecentSuggestionsProvider;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +27,8 @@ public class SecondFragment extends Fragment {
     EditText fullnamebox, emailbox, usernamebox, passwordbox;
     //Declaramos la instacia del helper
     DataBaseHelper dbhelper;
-
+    //Este es una variable que nos ayuda a saber si los cmapos se llenaron correctamente
+    boolean compleate = false;
 
     @Override
     public View onCreateView(
@@ -54,8 +57,10 @@ public class SecondFragment extends Fragment {
 
                 registrarUsuario();
 
-                NavHostFragment.findNavController(SecondFragment.this)
-                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                if(compleate){
+                    NavHostFragment.findNavController(SecondFragment.this)
+                            .navigate(R.id.action_SecondFragment_to_FirstFragment);
+                }
             }
         });
     }
@@ -71,16 +76,33 @@ public class SecondFragment extends Fragment {
 //        }
         SQLiteDatabase db = dbhelper.getWritableDatabase();
 
-        String insertar = "INSERT INTO " + Utilidades.TABLE_USERS + " (" + Utilidades.CAMPO_TYPE + "," + Utilidades.CAMPO_FULLNAME
-                + "," + Utilidades.CAMPO_EMAIL + "," + Utilidades.CAMPO_USERNAME + "," + Utilidades.CAMPO_PASSWORD + ") " +
-                "VALUES (" + "'Regular'" + ", '" + fullnamebox.getText().toString() + "' , '" + emailbox.getText().toString() + "' , '"
-                + usernamebox.getText().toString() + "' , '" + passwordbox.getText().toString() + "' )";
+        String fullName = fullnamebox.getText().toString();
+        String userName = usernamebox.getText().toString();
+        String password = passwordbox.getText().toString();
 
-        db.execSQL(insertar);
+        //Revisamos si los campos fueron llenados correctamente o no
+        compleate = check(fullName, userName, password);
+        if(compleate){
+            String insertar = "INSERT INTO " + Utilidades.TABLE_USERS + " (" + Utilidades.CAMPO_TYPE + "," + Utilidades.CAMPO_FULLNAME
+                    + "," + Utilidades.CAMPO_EMAIL + "," + Utilidades.CAMPO_USERNAME + "," + Utilidades.CAMPO_PASSWORD + ") " +
+                    "VALUES (" + "'Regular'" + ", '" + fullName + "' , '" + emailbox.getText().toString() + "' , '"
+                    + userName + "' , '" + password + "' )";
 
-        db.close();;
+            db.execSQL(insertar);
+            db.close();
+        }else{
+            Toast.makeText(getActivity(), "ERROR: Campos incompletos. Completar Registro",Toast.LENGTH_LONG).show();
+        }
+
     }
-
+    //Finción que se encarga de revisar si los campos estan vacios o no
+    private boolean check(String campo1, String campo2, String campo3){
+        if(TextUtils.isEmpty(campo1) || TextUtils.isEmpty(campo2) || TextUtils.isEmpty(campo3)){
+            return false;
+        }else{
+            return true;
+        }
+    }
 
     @Override
     public void onDestroyView() {
