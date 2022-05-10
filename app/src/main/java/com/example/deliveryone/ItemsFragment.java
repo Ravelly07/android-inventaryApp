@@ -36,6 +36,7 @@ public class ItemsFragment extends Fragment {
 
     //Declaración de las listas
     ArrayList<String> listaItems;
+    ArrayList<String> listaBarCodes;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -64,6 +65,14 @@ public class ItemsFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                //Toast.makeText(getActivity(), "BarCode: " + listaBarCodes.get(i) ,Toast.LENGTH_LONG).show();
+
+                //Enviamos el codigo de barras
+                Bundle bundle = new Bundle();
+                bundle.putInt("codebar", Integer.parseInt(listaBarCodes.get(i)));
+                getParentFragmentManager().setFragmentResult("key", bundle);
+
+                //Navegamos a la vista del item
                 NavHostFragment.findNavController(ItemsFragment.this)
                         .navigate(R.id.action_ItemsFragment_to_itemViewFragment);
             }
@@ -94,12 +103,13 @@ public class ItemsFragment extends Fragment {
         Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLE_ITEMS,null);
 
         if(cursor == null ){
-          //  Toast.makeText(getActivity(), "No hay registros", Toast.LENGTH_LONG);
             return new ArrayList<String>();
         }
 
         ArrayList list = new ArrayList();
+        listaBarCodes = new ArrayList();
         while (cursor.moveToNext()){
+            listaBarCodes.add(cursor.getString(0));
             list.add(cursor.getString(1));
         }
         return list;
