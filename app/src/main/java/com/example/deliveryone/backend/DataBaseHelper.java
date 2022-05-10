@@ -25,6 +25,10 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(Utilidades.CREAR_TABLA_ITEMS);
         sqLiteDatabase.execSQL(Utilidades.CREAR_TABLA_USERS);
+
+        //Insertamos el usuario administrador
+        sqLiteDatabase.execSQL(Utilidades.ADMIN_USER);
+
     }
 
     @Override
