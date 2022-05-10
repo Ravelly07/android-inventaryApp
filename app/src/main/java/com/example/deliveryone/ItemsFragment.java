@@ -100,7 +100,7 @@ public class ItemsFragment extends Fragment {
     private ArrayList<String> createListItems(){
         SQLiteDatabase db = dbhelper.getReadableDatabase();
         //Select * From t_items
-        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLE_ITEMS,null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLE_ITEMS + " ORDER BY " + Utilidades.CAMPO_DESCRIPTION ,null);
 
         if(cursor == null ){
             return new ArrayList<String>();

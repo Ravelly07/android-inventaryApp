@@ -49,7 +49,7 @@ public class ItemViewFragment extends Fragment {
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 //Recibimos el valor del codebar (nuestro primarykey)
                 codebar = result.getDouble("codebar");
-                Toast.makeText(getActivity(), "El BarCode del producto es : " + codebar ,Toast.LENGTH_LONG).show();
+                //Toast.makeText(getActivity(), "El BarCode del producto es : " + codebar ,Toast.LENGTH_LONG).show();
 
                 //Reconocemos los elementos del view
                 descriptionBox = (EditText) getView().findViewById(R.id.descriptionBox);
@@ -91,21 +91,21 @@ public class ItemViewFragment extends Fragment {
         switch (impuesto){
             case "IVA":
                 precio1 = costo * 1.16;
-                precio1Box.setText(String.format("%.2f",precio1));
+                precio1Box.setText("$"+String.format("%.2f",precio1));
                 precio2 = costo * 1.10;
-                precio2Box.setText(String.format("%.2f",precio2));
+                precio2Box.setText("$"+String.format("%.2f",precio2));
                 break;
             case "IV8":
                 precio1 = costo * 1.08;
-                precio1Box.setText(String.format("%.2f",precio1));
+                precio1Box.setText("$"+String.format("%.2f",precio1));
                 precio2 = costo * 1.05;
-                precio2Box.setText(String.format("%.2f",precio2));
+                precio2Box.setText("$"+String.format("%.2f",precio2));
                 break;
             case "SYS":
                 precio1 = costo * 1.05;
-                precio1Box.setText(String.format("%.2f",precio1));
+                precio1Box.setText("$"+String.format("%.2f",precio1));
                 precio2 = costo * 1.02;
-                precio2Box.setText(String.format("%.2f",precio2));
+                precio2Box.setText("$"+String.format("%.2f",precio2));
                 break;
             default:
                 break;
