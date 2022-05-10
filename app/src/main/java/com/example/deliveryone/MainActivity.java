@@ -1,7 +1,10 @@
 package com.example.deliveryone;
 
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
 
+import com.example.deliveryone.backend.DataBaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +24,14 @@ import com.google.android.material.tabs.TabLayout;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    DataBaseHelper dbhelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
+        dbhelper = new DataBaseHelper(this);
+        SQLiteDatabase db = dbhelper.getWritableDatabase();
+        if(db != null){
+            Toast.makeText(this, "BASE DE DATOS CREADA CON EXITO",Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this, "ERROR AL CREAR LA BASE DE DATOS",Toast.LENGTH_LONG).show();
+        }
 
     }
 
