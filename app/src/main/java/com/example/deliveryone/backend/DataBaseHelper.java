@@ -35,6 +35,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(Utilidades.PRODUCTO5);
         sqLiteDatabase.execSQL(Utilidades.PRODUCTO6);
         sqLiteDatabase.execSQL(Utilidades.PRODUCTO7);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO8);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO9);
+        sqLiteDatabase.execSQL(Utilidades.PRODUCTO10);
 
     }
 

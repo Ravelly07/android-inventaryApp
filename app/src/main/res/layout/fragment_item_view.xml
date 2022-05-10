@@ -21,29 +21,16 @@
         tools:ignore="ImageContrastCheck"
         tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/descriptionLabel"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="@string/descripcion"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.136" />
-
     <EditText
         android:id="@+id/descriptionBox"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
+        android:layout_width="172dp"
+        android:layout_height="46dp"
         android:ems="10"
         android:enabled="false"
         android:hint="@string/defaultText"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
@@ -52,29 +39,16 @@
         app:layout_constraintVertical_bias="0.135"
         tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
-    <TextView
-        android:id="@+id/precio1Label"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="@string/precio1"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.308" />
-
     <EditText
         android:id="@+id/precio1Box"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
+        android:layout_width="172dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:hint="@string/defaultText"
         android:enabled="false"
+        android:hint="@string/defaultText"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
@@ -83,29 +57,16 @@
         app:layout_constraintVertical_bias="0.308"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/precio2Label"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="@string/precio2"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.48" />
-
     <EditText
         android:id="@+id/precio2Box"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
+        android:layout_width="172dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:hint="@string/defaultText"
         android:enabled="false"
+        android:hint="@string/defaultText"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
@@ -115,28 +76,71 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="157dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/descripcion"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/precio1Label"
+        android:layout_width="157dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/precio1"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <TextView
+        android:id="@+id/precio2Label"
+        android:layout_width="157dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/precio2"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <TextView
         android:id="@+id/codigoLabel"
         android:layout_width="157dp"
         android:layout_height="47dp"
         android:gravity="center"
         android:text="@string/codigo"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.651" />
 
     <EditText
         android:id="@+id/codigoBox"
-        android:layout_width="158dp"
-        android:layout_height="48dp"
+        android:layout_width="172dp"
+        android:layout_height="46dp"
         android:ems="10"
-        android:hint="@string/defaultText"
         android:enabled="false"
+        android:hint="@string/defaultText"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/codigoLabel"

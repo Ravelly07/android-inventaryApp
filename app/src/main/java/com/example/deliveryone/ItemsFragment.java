@@ -69,7 +69,7 @@ public class ItemsFragment extends Fragment {
 
                 //Enviamos el codigo de barras
                 Bundle bundle = new Bundle();
-                bundle.putInt("codebar", Integer.parseInt(listaBarCodes.get(i)));
+                bundle.putDouble("codebar", Double.parseDouble(listaBarCodes.get(i)));
                 getParentFragmentManager().setFragmentResult("key", bundle);
 
                 //Navegamos a la vista del item

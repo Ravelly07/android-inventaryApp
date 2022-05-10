@@ -28,29 +28,41 @@ public class Utilidades {
     //Algunos registros por defectos para la base de datos (Inventario)
     public static final String PRODUCTO1 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "8975" +" , "+ "'Coca Cola 600ml'"+ " , " + "'IVA'" + " , " + "18" + ")" ;
+            "VALUES (" + "7501861600017" +" , "+ "'ACEITE IMPERIAL SOYA 1LT'"+ " , " + "'SYS'" + " , " + "38.88" + ")" ;
 
     public static final String PRODUCTO2 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "2531" +" , "+ "'Galletas Maria Gamesa'"+ " , " + "'IV8'" + " , " + "10" + ")" ;
+            "VALUES (" + "7501003124135" +" , "+ "'CHICHARO HERDEZ 215G'"+ " , " + "'SYS'" + " , " + "6.68" + ")" ;
 
     public static final String PRODUCTO3 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "6681" +" , "+ "'Leche Lala'"+ " , " + "'SYS'" + " , " + "12" + ")" ;
+            "VALUES (" + "7501125103582" +" , "+ "'ELECTROLIT PIÑA 625ML'"+ " , " + "'SYS'" + " , " + "16.33" + ")" ;
 
     public static final String PRODUCTO4 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "2245" +" , "+ "'Vaso Plastico #8'"+ " , " + "'SYS'" + " , " + "23" + ")" ;
+            "VALUES (" + "7501003340139" +" , "+ "'MAYONESA McCORMICK 390G'"+ " , " + "'SYS'" + " , " + "30" + ")" ;
 
     public static final String PRODUCTO5 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "9348" +" , "+ "'Chiles Rajas La Morena 210gr'"+ " , " + "'SYS'" + " , " + "7.50" + ")" ;
+            "VALUES (" + "78909434" +" , "+ "'FERRERO ROCHER 3 PZS'"+ " , " + "'IV8'" + " , " + "19.58" + ")" ;
 
     public static final String PRODUCTO6 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "3506" +" , "+ "'Jabon Rosa Venus Rosa'"+ " , " + "'SYS'" + " , " + "9" + ")" ;
+            "VALUES (" + "7501000658923" +" , "+ "'G MARIAS GAMESA 170G'"+ " , " + "'IV8'" + " , " + "7.74" + ")" ;
 
     public static final String PRODUCTO7 = "INSERT INTO " + TABLE_ITEMS +
             " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
-            "VALUES (" + "9016" +" , "+ "'Helado Magnum Nuez'"+ " , " + "'IVA'" + " , " + "50" + ")" ;
+            "VALUES (" + "7501008023143" +" , "+ "'CER CORN FLAKES KELLOGGS 500 G'"+ " , " + "'IV8'" + " , " + "35.37" + ")" ;
+
+    public static final String PRODUCTO8 = "INSERT INTO " + TABLE_ITEMS +
+            " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
+            "VALUES (" + "7509546655321" +" , "+ "'FABULOSO CITRICO+BICARBONATO 1LT'"+ " , " + "'IVA'" + " , " + "15.23" + ")" ;
+
+    public static final String PRODUCTO9 = "INSERT INTO " + TABLE_ITEMS +
+            " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
+            "VALUES (" + "7501036623469" +" , "+ "'HIG REGIO RINDE+ 4/600 H'"+ " , " + "'IVA'" + " , " + "26.38" + ")" ;
+
+    public static final String PRODUCTO10 = "INSERT INTO " + TABLE_ITEMS +
+            " (" + CAMPO_BAR_CODE + "," + CAMPO_DESCRIPTION + "," + CAMPO_TAXTYPE + "," + CAMPO_COST + ") " +
+            "VALUES (" + "75007614" +" , "+ "'COCA COLA 600ML'"+ " , " + "'IVA'" + " , " + "11.48" + ")" ;
 }
