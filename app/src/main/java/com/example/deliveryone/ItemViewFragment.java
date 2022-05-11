@@ -1,5 +1,6 @@
 package com.example.deliveryone;
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.deliveryone.backend.DataBaseHelper;
+import com.example.deliveryone.backend.MainController;
 import com.example.deliveryone.utilidades.Utilidades;
 
 
@@ -24,8 +26,6 @@ public class ItemViewFragment extends Fragment {
     Double codebar; //Esta bariable almacena el codigo de barras del producto (su primary key)
     //Declaramos los elementos del view
     EditText descriptionBox, precio1Box, precio2Box,codigoBox;
-    //Declaramos la instancia del helper
-    DataBaseHelper dbhelper;
 
     public ItemViewFragment() {
         // Required empty public constructor
@@ -56,10 +56,8 @@ public class ItemViewFragment extends Fragment {
                 precio1Box = (EditText) getView().findViewById(R.id.precio1Box);
                 precio2Box = (EditText) getView().findViewById(R.id.precio2Box);
                 codigoBox = (EditText) getView().findViewById(R.id.codigoBox);
-                //Conexión
-                dbhelper = new DataBaseHelper(getActivity());
 
-                SearchItem();
+                MainController.SearchItem(descriptionBox, precio1Box, precio2Box, codigoBox, getActivity(), codebar);
             }
         });
 
@@ -72,46 +70,5 @@ public class ItemViewFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_item_view, container, false);
     }
 
-    //Metodos-------
-    private void SearchItem(){
-        //Variable local para la operación
-        double costo, precio1,precio2;
-        String impuesto;
-
-        SQLiteDatabase db = dbhelper.getReadableDatabase();
-        //Select * from t_item where bar_code = codebar
-        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLE_ITEMS + " WHERE " + Utilidades.CAMPO_BAR_CODE + " = " + codebar, null);
-        cursor.moveToFirst();
-        //Obteniendo los 4 campos del registro
-        codigoBox.setText(cursor.getString(0));
-        descriptionBox.setText(cursor.getString(1));
-        impuesto = cursor.getString(2);
-        costo = Double.parseDouble(cursor.getString(3));
-
-        switch (impuesto){
-            case "IVA":
-                precio1 = costo * 1.16;
-                precio1Box.setText("$"+String.format("%.2f",precio1));
-                precio2 = costo * 1.10;
-                precio2Box.setText("$"+String.format("%.2f",precio2));
-                break;
-            case "IV8":
-                precio1 = costo * 1.08;
-                precio1Box.setText("$"+String.format("%.2f",precio1));
-                precio2 = costo * 1.05;
-                precio2Box.setText("$"+String.format("%.2f",precio2));
-                break;
-            case "SYS":
-                precio1 = costo * 1.05;
-                precio1Box.setText("$"+String.format("%.2f",precio1));
-                precio2 = costo * 1.02;
-                precio2Box.setText("$"+String.format("%.2f",precio2));
-                break;
-            default:
-                break;
-        }
-
-
-    }
 
 }
