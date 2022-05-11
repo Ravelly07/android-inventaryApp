@@ -22,29 +22,16 @@
         tools:ignore="ImageContrastCheck"
         tools:src="@tools:sample/avatars" />
 
-    <TextView
-        android:id="@+id/descriptionLabel"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="@string/descripcion"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
-        app:layout_constraintVertical_bias="0.137" />
-
     <EditText
         android:id="@+id/descriptionBox"
-        android:layout_width="158dp"
+        android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
         android:hint="@string/databaseAdd"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.464"
@@ -53,29 +40,16 @@
         app:layout_constraintVertical_bias="0.135"
         tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
-    <TextView
-        android:id="@+id/costoLabel"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="@string/costo"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
-        app:layout_constraintVertical_bias="0.307"/>
-
     <EditText
         android:id="@+id/costoBox"
-        android:layout_width="158dp"
+        android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
         android:hint="@string/databaseAdd"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
@@ -84,29 +58,16 @@
         app:layout_constraintVertical_bias="0.308"
         tools:ignore="SpeakableTextPresentCheck" />
 
-    <TextView
-        android:id="@+id/ivaLabel"
-        android:layout_width="157dp"
-        android:layout_height="47dp"
-        android:gravity="center"
-        android:text="@string/iva"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
-        app:layout_constraintVertical_bias="0.481" />
-
     <EditText
         android:id="@+id/ivaBox"
-        android:layout_width="158dp"
+        android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
         android:hint="@string/databaseAdd"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.462"
@@ -121,23 +82,66 @@
         android:layout_height="47dp"
         android:gravity="center"
         android:text="@string/codigo"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
         app:layout_constraintVertical_bias="0.651" />
 
+    <TextView
+        android:id="@+id/descriptionLabel"
+        android:layout_width="157dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/descripcion"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/costoLabel"
+        android:layout_width="157dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/costo"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <TextView
+        android:id="@+id/ivaLabel"
+        android:layout_width="157dp"
+        android:layout_height="47dp"
+        android:gravity="center"
+        android:text="@string/iva"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewAdmin"
+        app:layout_constraintVertical_bias="0.482" />
+
     <EditText
         android:id="@+id/codigoBox"
-        android:layout_width="158dp"
+        android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
         android:hint="@string/databaseAdd"
         android:importantForAutofill="no"
         android:inputType="textPersonName"
         android:textColorHint="#757575"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/codigoLabel"

@@ -4,7 +4,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.fragment.NavHostFragment;
 
 import android.view.LayoutInflater;
@@ -25,10 +27,6 @@ import java.util.ArrayList;
 
 
 public class ItemsFragment extends Fragment {
-
-//    String exampleList[] = {"Zargo", "Bonbon", "Coni", "Peggy", "Alkapone", "Layla","Napoleaon",
-//            "Lilit","Coqueta","Ron","Draco","Chispita","Bala","Canela"}; //ESTO SOLO PARA TENER UN EJEMPLO DE VISTA
-
     ArrayAdapter<String> arrayAdapter;
 
     //Conexión con la BD
@@ -38,9 +36,21 @@ public class ItemsFragment extends Fragment {
     ArrayList<String> listaItems;
     ArrayList<String> listaBarCodes;
 
+   String roll;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        getParentFragmentManager().setFragmentResultListener("key1", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                //Recibimos el valor
+                roll = result.getString("userType");
+                Toast.makeText(getActivity(), "El usuario es de tipo: " + roll ,Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 
@@ -72,9 +82,16 @@ public class ItemsFragment extends Fragment {
                 bundle.putDouble("codebar", Double.parseDouble(listaBarCodes.get(i)));
                 getParentFragmentManager().setFragmentResult("key", bundle);
 
-                //Navegamos a la vista del item
-                NavHostFragment.findNavController(ItemsFragment.this)
-                        .navigate(R.id.action_ItemsFragment_to_itemViewFragment);
+
+                if(roll.equals("Regular")) {
+                    //Navegamos a la vista del item
+                    NavHostFragment.findNavController(ItemsFragment.this)
+                            .navigate(R.id.action_ItemsFragment_to_itemViewFragment);
+                }else if(roll.equals("Admin")){
+                    //Navegamos a la vista admin item
+                    NavHostFragment.findNavController(ItemsFragment.this)
+                            .navigate(R.id.action_ItemsFragment_to_adminViewFragment);
+                }
             }
         });
 

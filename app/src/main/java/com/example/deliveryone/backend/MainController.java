@@ -29,7 +29,7 @@ public class MainController {
 
         try{
             cursor.isNull(0);
-            Toast.makeText(act, "SI EXISTE, ACCESASTE" , Toast.LENGTH_LONG).show();
+            Toast.makeText(act, "Acceso permitido" , Toast.LENGTH_LONG).show();
             return true;
         }catch (Exception e){
             Toast.makeText(act, "ERROR: Las credenciales no son correctas. Rectificar",Toast.LENGTH_LONG).show();
@@ -82,7 +82,6 @@ public class MainController {
 
     }
 
-
     public static boolean registrarUsuario(EditText fullnamebox,EditText emailbox ,EditText usernamebox, EditText passwordbox, Activity act ){
         //Declaramos la instacia del helper
         DataBaseHelper dbhelper;
@@ -112,12 +111,35 @@ public class MainController {
         return compleate;
     }
 
-    //Función que se encarga de revisar si los campos estan vacios o no
+    //Función Auxiliar a RegistrarUsuario, Verifica que todos los campos (NECESARIOS) esten llenos.
     private static boolean check(String campo1, String campo2, String campo3){
         if(TextUtils.isEmpty(campo1) || TextUtils.isEmpty(campo2) || TextUtils.isEmpty(campo3)){
             return false;
         }else{
             return true;
+        }
+    }
+
+    public  static boolean isAdmin(EditText user, EditText password, Activity act){
+        DataBaseHelper dbhelper;
+        dbhelper = new DataBaseHelper(act);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        //Valores
+        String v_user = user.getText().toString();
+        String v_password = password.getText().toString();
+
+        //Ejecutamos la consulta
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLE_USERS +
+                " WHERE " + Utilidades.CAMPO_USERNAME + " = '" + v_user +
+                "' AND " + Utilidades.CAMPO_PASSWORD + " = '" + v_password + "'", null);
+        cursor.moveToFirst();
+
+        String valor1 = cursor.getString(1);
+
+        if(valor1.equals("Admin")){
+            return true;
+        }else{
+            return false;
         }
     }
 

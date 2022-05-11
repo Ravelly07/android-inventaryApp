@@ -54,6 +54,11 @@ public class SecondFragment extends Fragment {
                 compleate=  MainController.registrarUsuario(fullnamebox, emailbox,usernamebox,passwordbox, getActivity());
 
                 if(compleate){
+                    fullnamebox.setText("");
+                    emailbox.setText("");
+                    usernamebox.setText("");
+                    passwordbox.setText("");
+
                     NavHostFragment.findNavController(SecondFragment.this)
                             .navigate(R.id.action_SecondFragment_to_FirstFragment);
                 }

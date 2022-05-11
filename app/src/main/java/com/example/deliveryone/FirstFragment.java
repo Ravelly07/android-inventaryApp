@@ -53,6 +53,17 @@ public class FirstFragment extends Fragment {
                 exist = MainController.searchUser(usernamebox, passwordbox, getActivity());
 
                 if(exist) {
+                    boolean isAdmin = MainController.isAdmin(usernamebox, passwordbox, getActivity());
+                    if(isAdmin){
+                        //enviamos key admin
+                        Bundle bundle = new Bundle();
+                        bundle.putString("userType", "Admin");
+                        getParentFragmentManager().setFragmentResult("key1",bundle);
+                    }else{
+                        Bundle bundle = new Bundle();
+                        bundle.putString("userType", "Regular");
+                        getParentFragmentManager().setFragmentResult("key1",bundle);
+                    }
                     usernamebox.setText("");
                     passwordbox.setText("");
                     NavHostFragment.findNavController(FirstFragment.this)
