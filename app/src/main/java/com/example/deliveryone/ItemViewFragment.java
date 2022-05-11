@@ -23,7 +23,7 @@ import com.example.deliveryone.utilidades.Utilidades;
 
 
 public class ItemViewFragment extends Fragment {
-    Double codebar; //Esta bariable almacena el codigo de barras del producto (su primary key)
+    Double codebar; //Esta Variable almacena el codigo de barras del producto (su primary key)
     //Declaramos los elementos del view
     EditText descriptionBox, precio1Box, precio2Box,codigoBox;
 
@@ -43,7 +43,7 @@ public class ItemViewFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Recibimos el codigo de barras (primary key) del produto que se mostrará
+        //Metodo para recibir el valor del codigo de barras la lalve primaria de nuestra tabla
         getParentFragmentManager().setFragmentResultListener("key", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
@@ -56,7 +56,7 @@ public class ItemViewFragment extends Fragment {
                 precio1Box = (EditText) getView().findViewById(R.id.precio1Box);
                 precio2Box = (EditText) getView().findViewById(R.id.precio2Box);
                 codigoBox = (EditText) getView().findViewById(R.id.codigoBox);
-
+                //Metodo utilizado para llenar los campos con información de la DB
                 MainController.SearchItem(descriptionBox, precio1Box, precio2Box, codigoBox, getActivity(), codebar);
             }
         });

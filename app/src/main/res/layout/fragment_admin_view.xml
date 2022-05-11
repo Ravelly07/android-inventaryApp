@@ -23,7 +23,7 @@
         tools:src="@tools:sample/avatars" />
 
     <EditText
-        android:id="@+id/descriptionBox"
+        android:id="@+id/descriptionBoxAd"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -41,7 +41,7 @@
         tools:ignore="SpeakableTextPresentCheck,DuplicateSpeakableTextCheck" />
 
     <EditText
-        android:id="@+id/costoBox"
+        android:id="@+id/costoBoxAd"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -59,7 +59,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <EditText
-        android:id="@+id/ivaBox"
+        android:id="@+id/ivaBoxAd"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"
@@ -133,7 +133,7 @@
         app:layout_constraintVertical_bias="0.482" />
 
     <EditText
-        android:id="@+id/codigoBox"
+        android:id="@+id/codigoBoxAd"
         android:layout_width="172dp"
         android:layout_height="48dp"
         android:ems="10"

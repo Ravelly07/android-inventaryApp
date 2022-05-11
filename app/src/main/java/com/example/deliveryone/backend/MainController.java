@@ -4,8 +4,11 @@ import android.app.Activity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.example.deliveryone.utilidades.Utilidades;
 
@@ -29,10 +32,10 @@ public class MainController {
 
         try{
             cursor.isNull(0);
-            Toast.makeText(act, "Acceso permitido" , Toast.LENGTH_LONG).show();
+            Toast.makeText(act, "Acceso permitido" , Toast.LENGTH_SHORT).show();
             return true;
         }catch (Exception e){
-            Toast.makeText(act, "ERROR: Las credenciales no son correctas. Rectificar",Toast.LENGTH_LONG).show();
+            Toast.makeText(act, "ERROR: Las credenciales no son correctas. Rectificar",Toast.LENGTH_SHORT).show();
             return false;
         }
     }
@@ -141,6 +144,55 @@ public class MainController {
         }else{
             return false;
         }
+    }
+
+    public static void FillFields(EditText descriptionBoxAd, EditText costoBoxAd, EditText ivaBoxAd, EditText codigoBoxAd, Activity act, Double codebar) {
+        //Declaramos la instancia del helper
+        DataBaseHelper dbhelper;
+        //Conexión
+        dbhelper = new DataBaseHelper(act);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+
+        //Realizamos la consulta : Select * from t_item where bar_code = codebar
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Utilidades.TABLE_ITEMS + " WHERE " + Utilidades.CAMPO_BAR_CODE + " = " + codebar, null);
+        cursor.moveToFirst();
+
+        //Rellenamos campos
+        codigoBoxAd.setText(cursor.getString(0));
+        descriptionBoxAd.setText(cursor.getString(1));
+        ivaBoxAd.setText(cursor.getString(2));
+        costoBoxAd.setText(cursor.getString(3));
+
+    }
+
+    public static void update(EditText descriptionBoxAd, EditText costoBoxAd, EditText ivaBoxAd, EditText codigoBoxAd, FragmentActivity activity, String primaryKey) {
+        //Declaramos la instancia del helper
+        DataBaseHelper dbhelper;
+        //Conexión
+        dbhelper = new DataBaseHelper(activity);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        //Recolectamos la información nueva
+        String newDescription =descriptionBoxAd.getText().toString();
+        String newCost = costoBoxAd.getText().toString();
+        String newIva = ivaBoxAd.getText().toString();
+        String newCode = codigoBoxAd.getText().toString();
+
+        String UPDATE_REGISTRO = "UPDATE "+ Utilidades.TABLE_ITEMS + " SET " +
+                Utilidades.CAMPO_DESCRIPTION + " = '" + newDescription + "',"+
+                Utilidades.CAMPO_COST + " = '" + newCost + "'," +
+                Utilidades.CAMPO_TAXTYPE + " = '" + newIva + "'," +
+                Utilidades.CAMPO_BAR_CODE + " = '" + newCode + "'" +
+                " WHERE " + Utilidades.CAMPO_BAR_CODE + " = '" + primaryKey + "'";
+        Toast.makeText(activity,UPDATE_REGISTRO, Toast.LENGTH_SHORT ).show();
+        //Realizamos el update
+        try{
+            db.execSQL(UPDATE_REGISTRO);
+            Toast.makeText(activity, "ACTUALIZADO",Toast.LENGTH_SHORT);
+            db.close();
+        }catch(Exception e){
+            Toast.makeText(activity, "ERROR: NO SE ACTUALIZO",Toast.LENGTH_SHORT);
+        }
+
     }
 
     private void queryAllRegisters(){

@@ -47,6 +47,10 @@
     <fragment
         android:id="@+id/adminViewFragment"
         android:name="com.example.deliveryone.AdminViewFragment"
-        android:label="fragment_admin_view"
-        tools:layout="@layout/fragment_admin_view" />
+        android:label="@string/fragment_item_view"
+        tools:layout="@layout/fragment_admin_view" >
+        <action
+            android:id="@+id/action_adminViewFragment_to_ItemsFragment"
+            app:destination="@id/ItemsFragment" />
+    </fragment>
 </navigation>
