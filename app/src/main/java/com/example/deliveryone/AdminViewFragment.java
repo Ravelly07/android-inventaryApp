@@ -70,6 +70,21 @@ public class AdminViewFragment extends Fragment {
 
             }
         });
+        //Controlamos lo que sucede con el botón DELETE
+        binding.deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Eliminamos el registro
+                String primaryKey = codebar.toString();
+                MainController.delete(getActivity(), primaryKey);
+                //Automaticamente nos regresa a la vista anterior | No olvidemos enviar el tipo de usuario
+                Bundle bundle = new Bundle();
+                bundle.putString("userType", "Admin");
+                getParentFragmentManager().setFragmentResult("key1",bundle);
+                NavHostFragment.findNavController(AdminViewFragment.this)
+                        .navigate(R.id.action_adminViewFragment_to_ItemsFragment);
+            }
+        });
 
     }
 

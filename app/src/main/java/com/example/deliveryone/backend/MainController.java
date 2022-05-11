@@ -195,18 +195,29 @@ public class MainController {
 
     }
 
-    private void queryAllRegisters(){
+    public static void delete(FragmentActivity activity, String primaryKey) {
+        //Declaramos la instancia del helper
+        DataBaseHelper dbhelper;
+        //Conexión
+        dbhelper = new DataBaseHelper(activity);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+
+        String DELETE_REGISTRO = "DELETE FROM "+ Utilidades.TABLE_ITEMS +
+               " WHERE " + Utilidades.CAMPO_BAR_CODE + " = '" + primaryKey + "'";
+
+        Toast.makeText(activity,DELETE_REGISTRO, Toast.LENGTH_SHORT ).show();
+
+        //Realizamos el delete
+        try{
+            db.execSQL(DELETE_REGISTRO);
+            db.close();
+        }catch(Exception e){
+            Toast.makeText(activity, "ERROR: NO SE ELIMINO EL REGISTRO",Toast.LENGTH_SHORT);
+        }
+
 
     }
-    private void QueryOneRegister(){
 
-    }
-    private void deleteRegister(){
-
-    }
-    private void updateRegister(){
-
-    }
 
 
 }
