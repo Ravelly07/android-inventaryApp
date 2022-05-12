@@ -23,7 +23,6 @@ public class AdminViewFragment extends Fragment {
     private FragmentAdminViewBinding binding;
     //Elementos del view
     EditText descriptionBoxAd, costoBoxAd, ivaBoxAd, codigoBoxAd;
-    Button updateButton, deleteButton;
     //VARIABLE PARA ALMACENAR LA PRIMARY KEY RECIBIDA
     Double codebar;
 
@@ -67,7 +66,6 @@ public class AdminViewFragment extends Fragment {
                 getParentFragmentManager().setFragmentResult("key1",bundle);
                 NavHostFragment.findNavController(AdminViewFragment.this)
                         .navigate(R.id.action_adminViewFragment_to_ItemsFragment);
-
             }
         });
         //Controlamos lo que sucede con el botón DELETE
@@ -87,20 +85,6 @@ public class AdminViewFragment extends Fragment {
         });
 
     }
-
-    //Metodos-------
-    private void  SearchItem(){
-
-    }
-
-    private void Update(){
-
-    }
-
-    private void Delete(){
-
-    }
-    //---------------
 
     @Override
     public void onDestroyView() {

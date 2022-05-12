@@ -190,7 +190,7 @@ public class MainController {
             Toast.makeText(activity, "ACTUALIZADO",Toast.LENGTH_SHORT);
             db.close();
         }catch(Exception e){
-            Toast.makeText(activity, "ERROR: NO SE ACTUALIZO",Toast.LENGTH_SHORT);
+            Toast.makeText(activity, "ERROR: NO SE ACTUALIZO",Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -218,6 +218,32 @@ public class MainController {
 
     }
 
+    public static void insert(EditText descriptionInsertBox, EditText costoInsertBox, EditText ivaInsertBox, EditText codigoInsertBox, FragmentActivity activity) {
+        //Declaramos la instancia del helper
+        DataBaseHelper dbhelper;
+        //Conexión
+        dbhelper = new DataBaseHelper(activity);
+        SQLiteDatabase db = dbhelper.getReadableDatabase();
+        //Recolectamos la información nueva
+        String newDescription =descriptionInsertBox.getText().toString();
+        String newCost = costoInsertBox.getText().toString();
+        String newIva = ivaInsertBox.getText().toString();
+        String newCode = costoInsertBox.getText().toString();
 
+        String INSERT_NEW_REGISTRO = "INSERT INTO " + Utilidades.TABLE_ITEMS +
+                " (" + Utilidades.CAMPO_BAR_CODE + "," + Utilidades.CAMPO_DESCRIPTION + ","
+                + Utilidades.CAMPO_TAXTYPE + "," + Utilidades.CAMPO_COST + ") " +
+                "VALUES (" + newCode +" , '"+ newDescription +
+                "' , '" + newIva + "' , " + newCost + ")" ;
 
+        Toast.makeText(activity,INSERT_NEW_REGISTRO, Toast.LENGTH_SHORT ).show();
+        //Realizamos el update
+        try{
+            db.execSQL(INSERT_NEW_REGISTRO);
+            Toast.makeText(activity, "SE INSERTO EL REGISTRO EXITOSAMENTE",Toast.LENGTH_SHORT);
+            db.close();
+        }catch(Exception e){
+            Toast.makeText(activity, "ERROR:NO SE INSERTO EL REGISTRO",Toast.LENGTH_SHORT).show();
+        }
+    }
 }

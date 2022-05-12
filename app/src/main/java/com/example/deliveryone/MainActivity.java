@@ -1,5 +1,6 @@
 package com.example.deliveryone;
 
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Bundle;
@@ -7,10 +8,15 @@ import android.os.Bundle;
 import com.example.deliveryone.backend.DataBaseHelper;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.fragment.NavHostFragment;
@@ -42,10 +48,6 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
         dbhelper = new DataBaseHelper(this);
         SQLiteDatabase db = dbhelper.getWritableDatabase();
 //        if(db != null){
@@ -65,18 +67,31 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         //noinspection SimplifiableIfStatement
         if (id == R.id.insertProduct) {
+
+            try {
+                if (ItemsFragment.roll.equals("Admin")) {
+
+                    navController.navigate(R.id.insertItemFragment);
+                } else {
+                    Toast.makeText(getApplicationContext(),"Solo para Administrador", Toast.LENGTH_SHORT).show();
+                }
+            }catch (Exception e){
+                Toast.makeText(getApplicationContext(),"ERROR: Ingresa como administrador", Toast.LENGTH_SHORT).show();
+            }
+
             return true;
+        }else{
+            ItemsFragment.roll = null;
+            navController.navigate(R.id.FirstFragment);
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {

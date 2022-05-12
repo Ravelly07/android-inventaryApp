@@ -50,9 +50,9 @@ public class SecondFragment extends Fragment {
         binding.registeruser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                //Registro el nuevo usuario
                 compleate=  MainController.registrarUsuario(fullnamebox, emailbox,usernamebox,passwordbox, getActivity());
-
+                //Si se logro el registro, vuelvo a la vista anterior
                 if(compleate){
                     fullnamebox.setText("");
                     emailbox.setText("");
@@ -64,6 +64,13 @@ public class SecondFragment extends Fragment {
                 }
             }
         });
+        binding.goBack.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                NavHostFragment.findNavController(SecondFragment.this)
+                        .navigate(R.id.action_SecondFragment_to_FirstFragment);
+            }
+        }));
     }
 
 

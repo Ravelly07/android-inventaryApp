@@ -34,4 +34,7 @@
     <string name="databaseAdd">Insertar Valor</string>
     <string name="fragment_item_view">Producto</string>
     <string name="insert">Insert New Product</string>
+    <string name="RegistarProducto">Registrar Nuevo Producto</string>
+    <string name="goBack">Volver atras</string>
+    <string name="logOut">Log Out</string>
 </resources>

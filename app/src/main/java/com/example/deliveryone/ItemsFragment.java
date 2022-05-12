@@ -36,7 +36,7 @@ public class ItemsFragment extends Fragment {
     ArrayList<String> listaItems;
     ArrayList<String> listaBarCodes;
 
-   String roll;
+   public static String roll;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
