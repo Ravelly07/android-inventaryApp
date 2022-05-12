@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ItemsFragment">
+    android:background="@color/white_smoke"
+    tools:context=".ItemsFragment" >
 
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_bar"
@@ -23,9 +24,13 @@
         android:layout_margin="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:divider="@color/purple_700"
         android:dividerHeight="1dp"
-        android:listSelector="@color/honeydew"
+        android:listSelector="#D7CBE0"
+        android:scrollbarSize="7dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         />
 
 </LinearLayout>

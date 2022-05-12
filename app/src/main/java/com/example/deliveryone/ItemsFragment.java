@@ -47,7 +47,7 @@ public class ItemsFragment extends Fragment {
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
                 //Recibimos el valor
                 roll = result.getString("userType");
-                Toast.makeText(getActivity(), "El usuario es de tipo: " + roll ,Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "El usuario es de tipo: " + roll ,Toast.LENGTH_SHORT).show();
 
             }
         });

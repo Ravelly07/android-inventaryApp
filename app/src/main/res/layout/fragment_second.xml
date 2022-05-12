@@ -82,8 +82,8 @@
 
         <Button
             android:id="@+id/registeruser"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="190dp"
+            android:layout_height="52dp"
             android:text="@string/register"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -94,14 +94,16 @@
 
         <Button
             android:id="@+id/goBack"
-            android:layout_width="159dp"
-            android:layout_height="41dp"
+            android:layout_width="190dp"
+            android:layout_height="52dp"
+            android:backgroundTint="@color/white"
             android:text="@string/goBack"
+            android:textColor="@color/purple_700"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/registeruser"
-            app:layout_constraintVertical_bias="0.34" />
+            app:layout_constraintVertical_bias="0.227" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
