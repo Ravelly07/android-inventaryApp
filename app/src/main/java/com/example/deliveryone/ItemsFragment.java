@@ -64,10 +64,12 @@ public class ItemsFragment extends Fragment {
         ListView listView = (ListView) fragmentView.findViewById(R.id.list_item);
         SearchView searchView = (SearchView) fragmentView.findViewById(R.id.search_bar);
 
-
+        //Obtenemos los items
         ArrayList<String> listaItems = createListItems();
 
-        arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,listaItems);
+        //Cargamos la lista de items dentro del listView
+        //arrayAdapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1,listaItems);
+        arrayAdapter = new ArrayAdapter<String>(getActivity(), R.layout.row,listaItems);
         listView.setAdapter(arrayAdapter);
 
 

@@ -60,7 +60,7 @@
     <fragment
         android:id="@+id/insertItemFragment"
         android:name="com.example.deliveryone.InsertItemFragment"
-        android:label="fragment_insert_item"
+        android:label="@string/Nuevo_Producto"
         tools:layout="@layout/fragment_insert_item" >
         <action
             android:id="@+id/action_insertItemFragment_to_ItemsFragment"

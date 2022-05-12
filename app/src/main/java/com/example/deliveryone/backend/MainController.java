@@ -228,7 +228,7 @@ public class MainController {
         String newDescription =descriptionInsertBox.getText().toString();
         String newCost = costoInsertBox.getText().toString();
         String newIva = ivaInsertBox.getText().toString();
-        String newCode = costoInsertBox.getText().toString();
+        String newCode = codigoInsertBox.getText().toString();
 
         String INSERT_NEW_REGISTRO = "INSERT INTO " + Utilidades.TABLE_ITEMS +
                 " (" + Utilidades.CAMPO_BAR_CODE + "," + Utilidades.CAMPO_DESCRIPTION + ","
